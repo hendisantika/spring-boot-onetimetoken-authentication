@@ -71,4 +71,10 @@ public class OttSuccessHandler implements OneTimeTokenGenerationSuccessHandler {
 
         this.redirectHandler.handle(request, response, oneTimeToken);
     }
+
+    private String getEmail(String username) {
+        // this would be a database lookup for username
+        log.info("Retrieving email for user: {}", username);
+        return "dan.vega@broadcom.com";
+    }
 }
