@@ -40,7 +40,7 @@ public class SecurityConfig {
 
     @Bean
     InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-        var dan = User.withUsername("dvega").password("{noop}password").build();
-        return new InMemoryUserDetailsManager(dan);
+        var yuji = User.withUsername("yu71").password("{noop}53cret").build();
+        return new InMemoryUserDetailsManager(yuji);
     }
 }
