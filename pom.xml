@@ -15,6 +15,7 @@
     <description>spring-boot-onetimetoken-authentication</description>
     <properties>
         <java.version>25</java.version>
+        <jte.version>3.2.4</jte.version>
     </properties>
     <dependencies>
         <dependency>
@@ -52,12 +53,12 @@
         <dependency>
             <groupId>gg.jte</groupId>
             <artifactId>jte</artifactId>
-            <version>3.2.4</version>
+            <version>${jte.version}</version>
         </dependency>
         <dependency>
             <groupId>gg.jte</groupId>
-            <artifactId>jte-spring-boot-starter-3</artifactId>
-            <version>3.2.4</version>
+            <artifactId>jte-spring-boot-starter-4</artifactId>
+            <version>${jte.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -99,7 +100,7 @@
             <plugin>
                 <groupId>gg.jte</groupId>
                 <artifactId>jte-maven-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>${jte.version}</version>
                 <executions>
                     <execution>
                         <id>jte-generate</id>
