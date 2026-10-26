@@ -7,7 +7,48 @@ updates:
       time: '05:00'
       timezone: Asia/Jakarta
     open-pull-requests-limit: 10
+    target-branch: main
+    labels:
+      - dependencies
+      - java
+    commit-message:
+      prefix: "build(deps)"
+      prefix-development: "build(deps-dev)"
+      include: scope
+    groups:
+      spring-boot:
+        patterns:
+          - "org.springframework.boot:*"
+      jte:
+        patterns:
+          - "gg.jte:*"
+      maven-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+        exclude-patterns:
+          - "org.springframework.boot:*"
+          - "gg.jte:*"
+    ignore:
+      # Major Java/Spring Boot jumps need manual migration work
+      - dependency-name: "org.springframework.boot:spring-boot-starter-parent"
+        update-types: [ "version-update:semver-major" ]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+      time: '05:00'
+      timezone: Asia/Jakarta
+    open-pull-requests-limit: 10
+    target-branch: main
+    labels:
+      - dependencies
+      - github_actions
+    commit-message:
+      prefix: "ci(deps)"
+      include: scope
+    groups:
+      github-actions:
+        patterns:
+          - "*"
